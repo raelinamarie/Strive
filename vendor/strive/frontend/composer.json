@@ -1,0 +1,24 @@
+{
+    "name": "strive/frontend",
+    "description": "",
+    "authors": [
+        {
+            "name": "Michael Hopkins",
+            "email": "michael@appitventures.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers"
+        ],
+        "psr-0": {
+            "Strive\\Frontend": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
