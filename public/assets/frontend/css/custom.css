@@ -3021,7 +3021,6 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 @media (min-width:768px) {
     .navbar-left {
         float:left!important
-        padding-left: inherit;
     }
     .navbar-right {
         float:right!important
@@ -11656,8 +11655,7 @@ h2>.title {
 }
 .container-fluid {
     padding-left:10px;
-    padding-right:10px;
-    padding-top: 15px;
+    padding-right:10px
 }
 .rating {
     padding-top:102px

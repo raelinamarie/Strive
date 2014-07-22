@@ -71,7 +71,7 @@ class JobRepository implements JobRepositoryInterface{
             throw new NoSearchResultsException('no search results');
         }
         $idsForSearching = $jobs->lists('id');
-        $j = Job::with(['skills','days'])->whereIn('jobs.id',$idsForSearching)->get()->toArray();
+        $j = Job::with(['user','skills','days'])->whereIn('jobs.id',$idsForSearching)->get()->toArray();
         $favorites = (Auth::user()) ? $this->user->userFavoritesIds(Auth::user()->getAuthIdentifier()) : [];
         foreach($j as $key=>$val) {
             $j[$key]['stared'] = (in_array($val['id'], $favorites)) ? 1 : 0;
@@ -109,7 +109,7 @@ class JobRepository implements JobRepositoryInterface{
             throw new NoSearchResultsException('no search results');
         }
         $idsForSearching = $jobs->lists('id');
-        $j = Job::with(['skills','days'])->whereIn('jobs.id',$idsForSearching)->where('jobs.expired','=',0)->get()->toArray();
+        $j = Job::with(['user','skills','days'])->whereIn('jobs.id',$idsForSearching)->where('jobs.expired','=',0)->get()->toArray();
         $favorites = (Auth::user()) ? $this->user->userFavoritesIds(Auth::user()->getAuthIdentifier()) : [];
         foreach($j as $key=>$val) {
             $j[$key]['stared'] = (in_array($val['id'], $favorites)) ? 1 : 0;
@@ -128,7 +128,7 @@ class JobRepository implements JobRepositoryInterface{
             throw new NoSearchResultsException('no search results');
         }
         $idsForSearching = $jobs->lists('id');
-        $j = Job::with(['skills','days'])->whereIn('jobs.id',$idsForSearching)->where('jobs.expired','=',1)->get()->toArray();
+        $j = Job::with(['user','skills','days'])->whereIn('jobs.id',$idsForSearching)->where('jobs.expired','=',1)->get()->toArray();
         $favorites = (Auth::user()) ? $this->user->userFavoritesIds(Auth::user()->getAuthIdentifier()) : [];
         foreach($j as $key=>$val) {
             $j[$key]['stared'] = (in_array($val['id'], $favorites)) ? 1 : 0;

@@ -26,6 +26,7 @@ class CreateJobsTable extends Migration {
             $table->string('contact_email')->nullable();
 			$table->string('location')->nullable();
 			$table->string('address1')->nullable();
+            $table->string('address2')->nullable();
 			$table->string('city')->nullable();
 			$table->string('state')->nullable();
 			$table->string('zip')->nullable();

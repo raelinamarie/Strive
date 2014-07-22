@@ -91,6 +91,8 @@ Route::group(array('prefix' => 'api/v1','before'=>'PublicPageSugar|roleIntegrity
     Route::resource('groups','GroupsController',array('only'=>array('index')));
     Route::get('categoriesskills',array('as','api.v1.categories.skills.showall','uses'=>'CategoriesController@showAllGrouped'));
     Route::post('translate','TranslationsController@index');
+    Route::get('/newurl',['uses'=>'RatingsController@testMath']);
+
     Route::get('updateJobs',function(){
         $jobs = Job::all();
         foreach($jobs as $job){
