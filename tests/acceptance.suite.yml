@@ -1,0 +1,21 @@
+# Codeception Test Suite Configuration
+
+# suite for acceptance tests.
+# perform tests in browser using the WebDriver or PhpBrowser.
+# (tip: that's what your customer will see).
+# (tip: test your ajax and javascript only with WebDriver).
+
+class_name: WebGuy
+modules:
+    enabled:
+        - PhpBrowser
+        - WebHelper
+        - Db
+        - REST
+        - Laravel4
+    config:
+        PhpBrowser:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com'
+        REST:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com/api/v1'
+            timeout: 90

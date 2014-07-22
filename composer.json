@@ -1,0 +1,63 @@
+{
+    "name": "strive/laravel",
+    "description": "Strive Web Application",
+    "authors": [
+        {
+            "name": "Michael Hopkins",
+            "email": "michael@appitventures.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "4.1.*",
+        "iron-io/iron_mq": "1.5.1",
+        "teepluss/restable": "dev-master",
+        "barryvdh/laravel-omnipay": "0.1.*",
+        "barryvdh/laravel-vendor-cleanup": "1.*",
+        "way/generators": "~2.6",
+        "fzaninotto/faker": "1.3.*",
+        "barryvdh/laravel-ide-helper": "1.*",
+        "itsgoingd/clockwork": "1.5",
+        "google/apiclient": "dev-master",
+        "stripe/stripe-php":"1.13.0",
+        "laravel/cashier": "~1.0",
+        "bugsnag/bugsnag-laravel": "1.*",
+        "barryvdh/laravel-debugbar": "1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "app/commands",
+            "app/controllers",
+            "app/models",
+            "app/database/migrations",
+            "app/database/seeds"
+        ],
+        "psr-0": {
+            "Authority": "app/",
+            "Strive\\Admin": "vendor/strive/admin/src/",
+            "Controllers\\Frontend": "app/"
+
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "php artisan clear-compiled",
+            "php artisan debugbar:publish",
+            "php artisan vendor-cleanup",
+            "php artisan ide-helper:generate",
+            "php artisan optimize"
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+
+    "minimum-stability": "dev"
+
+}

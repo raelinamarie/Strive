@@ -1,0 +1,20 @@
+actor: Guy
+paths:
+    tests: tests
+    log: tests/_log
+    data: tests/_data
+    helpers: tests/_helpers
+settings:
+    bootstrap: _bootstrap.php
+    suite_class: \PHPUnit_Framework_TestSuite
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=strivetest'
+            user: 'codecept'
+            password: 'codecept12345'
+            dump: 'tests/_data/dump.sql'
+            populate: false
+            cleanup: false

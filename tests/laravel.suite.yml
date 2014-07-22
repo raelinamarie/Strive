@@ -1,0 +1,14 @@
+class_name: LaravelGuy
+modules:
+    enabled:
+        - PhpBrowser
+        - WebHelper
+        - Db
+        - Laravel4
+        - LaravelHelper
+    config:
+        PhpBrowser:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com'
+        REST:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com/api/v1'
+            timeout: 90

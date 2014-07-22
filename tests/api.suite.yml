@@ -1,0 +1,8 @@
+class_name: ApiGuy
+modules:
+    enabled: [PhpBrowser, REST, ApiHelper, Db]
+    config:
+        PhpBrowser:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com/'
+        REST:
+            url: 'http://ec2-54-186-4-2.us-west-2.compute.amazonaws.com/api/v1'
